@@ -16,24 +16,29 @@ let TaxCalculator = class TaxCalculator {
     let taxPrice;
     const {co2Emissions, fuelType} = vehicle;
 
-    const petrolPrice ={
-      0: 0,
-      50: 10,
-      75: 25,
-      90: 105,
-      100: 125,
-      110: 145,
-      130: 165,
-      150: 205,
-      170: 515,
-      190: 830,
-      225: 1240,
-      255: 1760,
-      100000: 2070
+    const taxPrices = {
+      'Petrol' : {
+        256: 2070,
+        226: 1760,
+        191: 1240,
+        171: 830,
+        151: 515,
+        131: 205,
+        111: 165,
+        101: 145,
+        91: 125,
+        76: 105,
+        51: 25,
+        1: 10,
+        0: 0
+      }
     }
+    
+    const vehicleCo2 = Object.keys(taxPrices[fuelType])
+            .sort((a,b) => b - a)
+            .find(element => co2Emissions >= element);
 
-    const vehicleCo2 = Object.keys(petrolPrice).find(element => co2Emissions <= element);
-    taxPrice = petrolPrice[vehicleCo2];
+    taxPrice = taxPrices[fuelType][vehicleCo2];
 
     return taxPrice;
     // throw new Error('You have to implement the method doSomething!');
