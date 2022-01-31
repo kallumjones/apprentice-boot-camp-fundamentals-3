@@ -11,3 +11,5 @@ If you would like the tests to run in watch mode, run `nvm exec npm run test:wat
 Note: brew is not an officially supported installation method. If you have problems <sup>(e.g. [can’t `nvm exec`](https://github.com/nvm-sh/nvm/issues/856))</sup>, `brew uninstall nvm` follow [the official installation instructions](https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating)
 
 If you have any problems, let one of the people running the boot camp know and we will happily help! :)
+
+Test
